@@ -14,6 +14,7 @@
 		600F1A821F99738200596139 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 600F1A801F99738200596139 /* LaunchScreen.storyboard */; };
 		64F49E15D43EA11B989AFE85 /* Pods_InClass06App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 509BE5BA85139D4C65A1AC36 /* Pods_InClass06App.framework */; };
 		CE82D3781F9B71180079E8AF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE82D3771F9B71180079E8AF /* GoogleService-Info.plist */; };
+		CE82D37A1F9B76F70079E8AF /* NewAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82D3791F9B76F70079E8AF /* NewAccountViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		600F1A831F99738200596139 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9543C029AA4954664168D6E4 /* Pods-InClass06App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InClass06App.release.xcconfig"; path = "Pods/Target Support Files/Pods-InClass06App/Pods-InClass06App.release.xcconfig"; sourceTree = "<group>"; };
 		CE82D3771F9B71180079E8AF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CE82D3791F9B76F70079E8AF /* NewAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAccountViewController.swift; sourceTree = "<group>"; };
 		F02FA1BC00C3EAEC5F40AE01 /* Pods-InClass06App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InClass06App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InClass06App/Pods-InClass06App.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,6 +80,7 @@
 				600F1A7E1F99738200596139 /* Assets.xcassets */,
 				600F1A801F99738200596139 /* LaunchScreen.storyboard */,
 				600F1A831F99738200596139 /* Info.plist */,
+				CE82D3791F9B76F70079E8AF /* NewAccountViewController.swift */,
 			);
 			path = InClass06App;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 			files = (
 				600F1A7A1F99738200596139 /* ViewController.swift in Sources */,
 				600F1A781F99738200596139 /* AppDelegate.swift in Sources */,
+				CE82D37A1F9B76F70079E8AF /* NewAccountViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
