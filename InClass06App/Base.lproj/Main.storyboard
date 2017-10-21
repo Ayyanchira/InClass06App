@@ -20,35 +20,41 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="sBu-fY-sfo">
                                 <rect key="frame" x="25" y="144" width="325" height="140"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="DRL-37-K9h">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="DRL-37-K9h">
                                         <rect key="frame" x="10" y="0.0" width="305" height="60"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g0n-Hd-AiP">
-                                                <rect key="frame" x="0.0" y="0.0" width="305" height="30"/>
+                                                <rect key="frame" x="164" y="0.0" width="141" height="30"/>
                                                 <state key="normal" title="Create New Account"/>
                                             </button>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eio-Qe-G1D">
                                                 <rect key="frame" x="0.0" y="30" width="305" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" textContentType="email"/>
                                             </textField>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="eio-Qe-G1D" firstAttribute="leading" secondItem="DRL-37-K9h" secondAttribute="leading" id="ZMD-Js-2dt"/>
+                                        </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="76y-7F-CsL">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="76y-7F-CsL">
                                         <rect key="frame" x="10" y="80" width="305" height="60"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aGE-LI-GjZ">
                                                 <rect key="frame" x="0.0" y="0.0" width="305" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="umQ-I8-DLT">
-                                                <rect key="frame" x="0.0" y="30" width="305" height="30"/>
+                                                <rect key="frame" x="133.5" y="30" width="38" height="30"/>
                                                 <state key="normal" title="Login"/>
                                             </button>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="aGE-LI-GjZ" firstAttribute="leading" secondItem="76y-7F-CsL" secondAttribute="leading" id="AAy-Fq-YCW"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
                                 <constraints>
