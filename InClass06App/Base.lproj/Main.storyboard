@@ -95,12 +95,15 @@
                                         <rect key="frame" x="0.0" y="0.0" width="48" height="30"/>
                                         <state key="normal" title="Cancel"/>
                                         <connections>
-                                            <action selector="cancelButtonPressed:" destination="TFt-ZX-ONL" eventType="touchUpInside" id="qrQ-GD-TYI"/>
+                                            <action selector="cancelButtonPressed:" destination="TFt-ZX-ONL" eventType="touchUpInside" id="cd1-Wa-cV9"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eY7-AG-Ws6">
                                         <rect key="frame" x="296" y="0.0" width="49" height="30"/>
                                         <state key="normal" title="Submit"/>
+                                        <connections>
+                                            <action selector="submitButtonPressed:" destination="TFt-ZX-ONL" eventType="touchUpInside" id="2CH-Ef-bu1"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -111,25 +114,25 @@
                                         <rect key="frame" x="0.0" y="0.0" width="295" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" textContentType="name"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S8Z-zr-GCJ">
                                         <rect key="frame" x="0.0" y="45" width="295" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" textContentType="email"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vsg-6A-drV">
                                         <rect key="frame" x="0.0" y="90" width="295" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qkz-Wd-A4C">
                                         <rect key="frame" x="0.0" y="135" width="295" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -145,6 +148,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qsw-fq-eQS"/>
                     </view>
+                    <connections>
+                        <outlet property="confirmPasswordTextField" destination="qkz-Wd-A4C" id="fib-xU-Mtj"/>
+                        <outlet property="emailTextField" destination="S8Z-zr-GCJ" id="mDN-la-Fyp"/>
+                        <outlet property="nameTextField" destination="wc4-sv-oEU" id="4FA-ME-RBo"/>
+                        <outlet property="passwordTextField" destination="Vsg-6A-drV" id="NST-Ip-VT1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N7O-hA-lmx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

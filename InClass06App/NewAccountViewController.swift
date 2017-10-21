@@ -7,9 +7,13 @@
 //
 
 import UIKit
-
+import Firebase
 class NewAccountViewController: UIViewController {
 
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var confirmPasswordTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,6 +27,36 @@ class NewAccountViewController: UIViewController {
     
     @IBAction func cancelButtonPressed(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func submitButtonPressed(_ sender: UIButton) {
+        if let username = nameTextField.text,
+            let email = emailTextField.text,
+            let password = passwordTextField.text,
+            confirmPasswordTextField.text! == passwordTextField.text{
+            print("Fields are OK")
+//            Auth.auth().createUser(withEmail: email, password: password, completion: nil)
+            Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
+                
+                if error != nil{
+                    DispatchQueue.main.async{
+                        let alert = UIAlertController(title: "Failed", message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
+                        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
+                        alert.addAction(okAction)
+                        self.show(alert, sender: nil)
+                    }
+                }
+                else{
+                    print("user created with username \(user.debugDescription)")
+                }
+                
+                
+            })
+        }
+        
+        
+        
     }
     
     /*
