@@ -111,9 +111,16 @@ class NotebooksTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let notebook = notebooks[indexPath.row]
         let notebookKey = notebook.key
-        
+        performSegue(withIdentifier: "viewNotes", sender: notebookKey)
     }
 
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let key = sender as? String{
+            let notesViewController = segue.destination as? NotesTableViewController
+            notesViewController?.key = key
+        }
+    }
     /*
     // MARK: - Navigation
 

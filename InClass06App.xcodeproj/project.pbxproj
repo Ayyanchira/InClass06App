@@ -16,6 +16,8 @@
 		CE82D37A1F9B76F70079E8AF /* NewAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82D3791F9B76F70079E8AF /* NewAccountViewController.swift */; };
 		CE82D37C1F9B85ED0079E8AF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82D37B1F9B85ED0079E8AF /* LoginViewController.swift */; };
 		CE82D3801F9B90AF0079E8AF /* NotebooksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82D37F1F9B90AF0079E8AF /* NotebooksTableViewController.swift */; };
+		CE82D3821F9BD2CA0079E8AF /* NotesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82D3811F9BD2CA0079E8AF /* NotesTableViewController.swift */; };
+		CE82D3841F9BDEB20079E8AF /* noteCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82D3831F9BDEB20079E8AF /* noteCustomTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		CE82D3791F9B76F70079E8AF /* NewAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAccountViewController.swift; sourceTree = "<group>"; };
 		CE82D37B1F9B85ED0079E8AF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CE82D37F1F9B90AF0079E8AF /* NotebooksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotebooksTableViewController.swift; sourceTree = "<group>"; };
+		CE82D3811F9BD2CA0079E8AF /* NotesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTableViewController.swift; sourceTree = "<group>"; };
+		CE82D3831F9BDEB20079E8AF /* noteCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = noteCustomTableViewCell.swift; sourceTree = "<group>"; };
 		F02FA1BC00C3EAEC5F40AE01 /* Pods-InClass06App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InClass06App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InClass06App/Pods-InClass06App.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,6 +88,8 @@
 				CE82D3791F9B76F70079E8AF /* NewAccountViewController.swift */,
 				CE82D37B1F9B85ED0079E8AF /* LoginViewController.swift */,
 				CE82D37F1F9B90AF0079E8AF /* NotebooksTableViewController.swift */,
+				CE82D3811F9BD2CA0079E8AF /* NotesTableViewController.swift */,
+				CE82D3831F9BDEB20079E8AF /* noteCustomTableViewCell.swift */,
 			);
 			path = InClass06App;
 			sourceTree = "<group>";
@@ -233,10 +239,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE82D3841F9BDEB20079E8AF /* noteCustomTableViewCell.swift in Sources */,
 				CE82D3801F9B90AF0079E8AF /* NotebooksTableViewController.swift in Sources */,
 				CE82D37C1F9B85ED0079E8AF /* LoginViewController.swift in Sources */,
 				600F1A781F99738200596139 /* AppDelegate.swift in Sources */,
 				CE82D37A1F9B76F70079E8AF /* NewAccountViewController.swift in Sources */,
+				CE82D3821F9BD2CA0079E8AF /* NotesTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

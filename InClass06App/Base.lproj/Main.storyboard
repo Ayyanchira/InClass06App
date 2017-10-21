@@ -167,7 +167,7 @@
             </objects>
             <point key="canvasLocation" x="1310" y="-710"/>
         </scene>
-        <!--Note Books-->
+        <!--Notebooks-->
         <scene sceneID="h3j-kF-k5q">
             <objects>
                 <tableViewController id="iZa-Ce-ayR" customClass="NotebooksTableViewController" customModule="InClass06App" customModuleProvider="target" sceneMemberID="viewController">
@@ -206,22 +206,99 @@
                             <outlet property="delegate" destination="iZa-Ce-ayR" id="oY0-pq-0YE"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Note Books" id="r5f-y4-AW6">
+                    <navigationItem key="navigationItem" title="Notebooks" id="r5f-y4-AW6">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="6QG-5Z-Wkr">
                             <connections>
                                 <action selector="logoutButtonPressed:" destination="iZa-Ce-ayR" id="0VR-tA-LU8"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="+" id="Fej-3E-xgj">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Fej-3E-xgj">
                             <connections>
                                 <action selector="addButtonPressed:" destination="iZa-Ce-ayR" id="oIm-wR-7o7"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="JTw-Zq-yIu" kind="show" identifier="viewNotes" id="uva-8S-CT9"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e27-ED-id2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2476" y="13.943028485757123"/>
+        </scene>
+        <!--Notes-->
+        <scene sceneID="1kv-bs-Cvc">
+            <objects>
+                <tableViewController id="JTw-Zq-yIu" customClass="NotesTableViewController" customModule="InClass06App" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="7Sa-5p-O89">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="noteCustomCell" rowHeight="146" id="SII-iB-6Dv" customClass="NoteCustomTableViewCell" customModule="InClass06App" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="146"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SII-iB-6Dv" id="yQA-8G-ydQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="145.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Wxz-4K-Gad">
+                                            <rect key="frame" x="8" y="5" width="359" height="95.5"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="vRx-cN-K4z">
+                                            <rect key="frame" x="10" y="110.5" width="355" height="30"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created on Date and Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uq8-Lw-F9M">
+                                                    <rect key="frame" x="0.0" y="0.0" width="200.5" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hj8-Jr-UnF">
+                                                    <rect key="frame" x="310" y="0.0" width="45" height="30"/>
+                                                    <state key="normal" title="Delete"/>
+                                                    <connections>
+                                                        <action selector="deleteButtonPressed:" destination="SII-iB-6Dv" eventType="touchUpInside" id="rRy-WH-YUM"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="vRx-cN-K4z" firstAttribute="top" secondItem="Wxz-4K-Gad" secondAttribute="bottom" priority="800" constant="10" id="0w3-1C-3T9"/>
+                                        <constraint firstAttribute="trailing" secondItem="Wxz-4K-Gad" secondAttribute="trailing" constant="8" id="BUy-Nz-cI0"/>
+                                        <constraint firstItem="Wxz-4K-Gad" firstAttribute="leading" secondItem="yQA-8G-ydQ" secondAttribute="leading" constant="8" id="GqA-V8-QDu"/>
+                                        <constraint firstAttribute="trailing" secondItem="vRx-cN-K4z" secondAttribute="trailing" constant="10" id="HaR-h9-dua"/>
+                                        <constraint firstItem="uq8-Lw-F9M" firstAttribute="leading" secondItem="yQA-8G-ydQ" secondAttribute="leading" constant="10" id="Pgx-x6-bn3"/>
+                                        <constraint firstAttribute="bottom" secondItem="vRx-cN-K4z" secondAttribute="bottom" constant="5" id="dG4-cv-4Hu"/>
+                                        <constraint firstItem="Wxz-4K-Gad" firstAttribute="top" secondItem="yQA-8G-ydQ" secondAttribute="top" constant="5" id="x5b-nS-qhY"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dateTimeLabel" destination="uq8-Lw-F9M" id="Lva-nF-VEK"/>
+                                    <outlet property="noteTextView" destination="Wxz-4K-Gad" id="rsW-1j-bfr"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="JTw-Zq-yIu" id="a6S-aP-giH"/>
+                            <outlet property="delegate" destination="JTw-Zq-yIu" id="xbO-C1-BTR"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Notes" id="yb2-Ur-6pn">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="2AJ-Ko-PAZ">
+                            <connections>
+                                <action selector="addButtonPressed:" destination="JTw-Zq-yIu" id="adC-TU-Rwb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z2K-R5-aBV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3396" y="13.943028485757123"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aA9-j9-mua">
