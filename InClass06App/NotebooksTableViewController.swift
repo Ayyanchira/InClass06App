@@ -8,14 +8,18 @@
 
 import UIKit
 import Firebase
+
 class NotebooksTableViewController: UITableViewController {
 
+    let rootref = Database.database().reference()
+    var notebooks:[NoteBook] = []
+    let uuid = UserDefaults.standard.object(forKey: "uuid") as! String
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
+        fetchNotebookfor(uuid: uuid)
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
@@ -29,12 +33,12 @@ class NotebooksTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return notebooks.count
     }
 
     @IBAction func logoutButtonPressed(_ sender: UIBarButtonItem) {
@@ -49,52 +53,66 @@ class NotebooksTableViewController: UITableViewController {
     }
     
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
-        
+        let addNotebookAlertController = UIAlertController(title: "New Notebook", message: "Enter Notebook Name", preferredStyle: UIAlertControllerStyle.alert)
+        addNotebookAlertController.addTextField { (textField: UITextField) in
+            textField.placeholder = "Notebook name"
+        }
+        let okAction = UIAlertAction(title: "OK", style: .default) { (alertAction:UIAlertAction) in
+            //call firebase save function
+            let textfield = addNotebookAlertController.textFields![0] as UITextField
+            if let notebookname = textfield.text{
+                if notebookname != ""{
+                    let date = DateFormatter.localizedString(from: Date(), dateStyle: .medium, timeStyle: .short)
+                    let notebookReference = self.rootref.child("Notebooks").child(self.uuid).childByAutoId();
+                    let notebookObject = [
+                        "name" : notebookname,
+                        "date" : date
+                    ]
+                    notebookReference.setValue(notebookObject)
+                    self.fetchNotebookfor(uuid: self.uuid)
+                }
+            }
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+        addNotebookAlertController.addAction(okAction)
+        addNotebookAlertController.addAction(cancelAction)
+        self.navigationController?.present(addNotebookAlertController, animated: true, completion: nil)
     }
-    /*
+    
+    
+    func fetchNotebookfor(uuid:String) {
+        let dataref = self.rootref.child("Notebooks").child(self.uuid)
+        dataref.observeSingleEvent(of: DataEventType.value) { (snapshot) in
+            if let values = snapshot.value as? NSDictionary{
+                self.notebooks.removeAll()
+                for value in values {
+                    let key = value.key as! String
+                    let object = value.value as? [String:Any]
+                    let name = object!["name"] as! String
+                    let date = object!["date"] as! String
+                    let notebook = NoteBook(name: name, date: date, key: key)
+                    self.notebooks.append(notebook)
+                }
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let notebook = notebooks[indexPath.row]
+        cell.textLabel?.text = notebook.name
+        cell.detailTextLabel?.text = "Created on \(notebook.date)"
         return cell
     }
-    */
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let notebook = notebooks[indexPath.row]
+        let notebookKey = notebook.key
+        
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
 
     /*
     // MARK: - Navigation
@@ -106,4 +124,17 @@ class NotebooksTableViewController: UITableViewController {
     }
     */
 
+}
+
+
+class NoteBook: NSObject {
+    var name:String
+    var date:String
+    var key:String
+    
+    init(name:String, date:String, key:String) {
+        self.name = name
+        self.date = date
+        self.key = key
+    }
 }
