@@ -35,23 +35,24 @@ class NewAccountViewController: UIViewController {
             let email = emailTextField.text,
             let password = passwordTextField.text,
             confirmPasswordTextField.text! == passwordTextField.text{
-            print("Fields are OK")
-//            Auth.auth().createUser(withEmail: email, password: password, completion: nil)
             Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
-                
-                if error != nil{
-                    DispatchQueue.main.async{
+                DispatchQueue.main.async{
+                    if error != nil{
+                        
                         let alert = UIAlertController(title: "Failed", message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
                         let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
+                        
                         alert.addAction(okAction)
                         self.show(alert, sender: nil)
                     }
+                    else{
+                        print("user created with username \(user.debugDescription)")
+                        //store uuid in userdefaults
+                        UserDefaults.standard.set("loggedIn", forKey: "uuid")
+                        self.dismiss(animated: true, completion: nil)
+                        
+                    }
                 }
-                else{
-                    print("user created with username \(user.debugDescription)")
-                }
-                
-                
             })
         }
         

@@ -8,20 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		600F1A781F99738200596139 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600F1A771F99738200596139 /* AppDelegate.swift */; };
-		600F1A7A1F99738200596139 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600F1A791F99738200596139 /* ViewController.swift */; };
 		600F1A7D1F99738200596139 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 600F1A7B1F99738200596139 /* Main.storyboard */; };
 		600F1A7F1F99738200596139 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 600F1A7E1F99738200596139 /* Assets.xcassets */; };
 		600F1A821F99738200596139 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 600F1A801F99738200596139 /* LaunchScreen.storyboard */; };
 		64F49E15D43EA11B989AFE85 /* Pods_InClass06App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 509BE5BA85139D4C65A1AC36 /* Pods_InClass06App.framework */; };
 		CE82D3781F9B71180079E8AF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE82D3771F9B71180079E8AF /* GoogleService-Info.plist */; };
 		CE82D37A1F9B76F70079E8AF /* NewAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82D3791F9B76F70079E8AF /* NewAccountViewController.swift */; };
+		CE82D37C1F9B85ED0079E8AF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82D37B1F9B85ED0079E8AF /* LoginViewController.swift */; };
+		CE82D3801F9B90AF0079E8AF /* NotebooksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82D37F1F9B90AF0079E8AF /* NotebooksTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		509BE5BA85139D4C65A1AC36 /* Pods_InClass06App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InClass06App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		600F1A741F99738200596139 /* InClass06App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InClass06App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		600F1A771F99738200596139 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		600F1A791F99738200596139 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		600F1A7C1F99738200596139 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		600F1A7E1F99738200596139 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		600F1A811F99738200596139 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -29,6 +29,8 @@
 		9543C029AA4954664168D6E4 /* Pods-InClass06App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InClass06App.release.xcconfig"; path = "Pods/Target Support Files/Pods-InClass06App/Pods-InClass06App.release.xcconfig"; sourceTree = "<group>"; };
 		CE82D3771F9B71180079E8AF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CE82D3791F9B76F70079E8AF /* NewAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAccountViewController.swift; sourceTree = "<group>"; };
+		CE82D37B1F9B85ED0079E8AF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		CE82D37F1F9B90AF0079E8AF /* NotebooksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotebooksTableViewController.swift; sourceTree = "<group>"; };
 		F02FA1BC00C3EAEC5F40AE01 /* Pods-InClass06App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InClass06App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InClass06App/Pods-InClass06App.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,12 +77,13 @@
 			children = (
 				CE82D3771F9B71180079E8AF /* GoogleService-Info.plist */,
 				600F1A771F99738200596139 /* AppDelegate.swift */,
-				600F1A791F99738200596139 /* ViewController.swift */,
 				600F1A7B1F99738200596139 /* Main.storyboard */,
 				600F1A7E1F99738200596139 /* Assets.xcassets */,
 				600F1A801F99738200596139 /* LaunchScreen.storyboard */,
 				600F1A831F99738200596139 /* Info.plist */,
 				CE82D3791F9B76F70079E8AF /* NewAccountViewController.swift */,
+				CE82D37B1F9B85ED0079E8AF /* LoginViewController.swift */,
+				CE82D37F1F9B90AF0079E8AF /* NotebooksTableViewController.swift */,
 			);
 			path = InClass06App;
 			sourceTree = "<group>";
@@ -230,7 +233,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				600F1A7A1F99738200596139 /* ViewController.swift in Sources */,
+				CE82D3801F9B90AF0079E8AF /* NotebooksTableViewController.swift in Sources */,
+				CE82D37C1F9B85ED0079E8AF /* LoginViewController.swift in Sources */,
 				600F1A781F99738200596139 /* AppDelegate.swift in Sources */,
 				CE82D37A1F9B76F70079E8AF /* NewAccountViewController.swift in Sources */,
 			);
