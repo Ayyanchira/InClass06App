@@ -12,6 +12,7 @@ class NoteCustomTableViewCell: UITableViewCell {
 
     @IBOutlet weak var noteTextView: UITextView!
     @IBOutlet weak var dateTimeLabel: UILabel!
+    @IBOutlet weak var deleteButton: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -23,7 +24,5 @@ class NoteCustomTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    @IBAction func deleteButtonPressed(_ sender: UIButton) {
-        
-    }
+
 }

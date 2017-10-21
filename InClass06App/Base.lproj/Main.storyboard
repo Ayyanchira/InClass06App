@@ -261,7 +261,7 @@
                                                     <rect key="frame" x="310" y="0.0" width="45" height="30"/>
                                                     <state key="normal" title="Delete"/>
                                                     <connections>
-                                                        <action selector="deleteButtonPressed:" destination="SII-iB-6Dv" eventType="touchUpInside" id="rRy-WH-YUM"/>
+                                                        <action selector="deleteButtonPressed:" destination="JTw-Zq-yIu" eventType="touchUpInside" id="kwP-GC-Jhu"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -279,6 +279,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="dateTimeLabel" destination="uq8-Lw-F9M" id="Lva-nF-VEK"/>
+                                    <outlet property="deleteButton" destination="Hj8-Jr-UnF" id="t2k-yv-eNr"/>
                                     <outlet property="noteTextView" destination="Wxz-4K-Gad" id="rsW-1j-bfr"/>
                                 </connections>
                             </tableViewCell>

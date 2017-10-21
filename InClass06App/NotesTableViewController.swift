@@ -45,8 +45,7 @@ class NotesTableViewController: UITableViewController {
         let note = notes[indexPath.row]
         cell.noteTextView.text = note.post
         cell.dateTimeLabel.text = "Created on \(note.date)"
-        // Configure the cell...
-        
+        cell.deleteButton.tag = indexPath.row
         return cell
     }
 
@@ -95,6 +94,11 @@ class NotesTableViewController: UITableViewController {
         self.navigationController?.present(addNoteAlertController, animated: true, completion: nil)
     }
     
+    @IBAction func deleteButtonPressed(_ sender: UIButton) {
+        print(sender.tag)
+        
+        
+    }
 }
 
 
