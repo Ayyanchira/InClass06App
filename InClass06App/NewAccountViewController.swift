@@ -50,7 +50,7 @@ class NewAccountViewController: UIViewController {
                         //store uuid in userdefaults
                         UserDefaults.standard.set(user?.uid, forKey: "uuid")
                         let rootreference = Database.database().reference()
-                        let userReference = rootreference.child("Users")
+                        let userReference = rootreference.child("Users").child(user!.uid)
                         let user = [
                             "name":username,
                             "email":email

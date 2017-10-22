@@ -39,7 +39,10 @@ class LoginViewController: UIViewController {
             let password = passwordTextfield.text{
             Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
                 if error != nil{
-                    
+                    let alertController = UIAlertController(title: "Log in failed", message: "Please enter valid email id and password. Or click on Create New Account to get started", preferredStyle: UIAlertControllerStyle.alert)
+                    let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                    alertController.addAction(okAction)
+                    self.show(alertController, sender: nil)
                 }
                 else{
                     let uuid = user?.uid
