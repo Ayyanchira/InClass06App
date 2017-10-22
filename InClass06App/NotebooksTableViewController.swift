@@ -63,7 +63,7 @@ class NotebooksTableViewController: UITableViewController {
             if let notebookname = textfield.text{
                 if notebookname != ""{
                     let date = DateFormatter.localizedString(from: Date(), dateStyle: .medium, timeStyle: .short)
-                    let notebookReference = self.rootref.child("Notebooks").child(self.uuid).childByAutoId();
+                    let notebookReference = self.rootref.child("Notebooks").child(self.uuid).childByAutoId()
                     let notebookObject = [
                         "name" : notebookname,
                         "date" : date

@@ -62,8 +62,9 @@ class NotesTableViewController: UITableViewController {
                     let note = Note(post: post, date: date, key: key)
                     self.notes.append(note)
                 }
-                self.tableView.reloadData()
+                
             }
+            self.tableView.reloadData()
         }
     }
 
@@ -78,12 +79,12 @@ class NotesTableViewController: UITableViewController {
             if let notesText = textfield.text{
                 if notesText != ""{
                     let date = DateFormatter.localizedString(from: Date(), dateStyle: .medium, timeStyle: .short)
-                    let notebookReference = self.rootref.child("Notes").child(self.key!).childByAutoId();
+                    let noteReference = self.rootref.child("Notes").child(self.key!).childByAutoId();
                     let noteObject = [
                         "post" : notesText,
                         "date" : date
                     ]
-                    notebookReference.setValue(noteObject)
+                    noteReference.setValue(noteObject)
                     self.fetchNotesfor(key: self.key!)
                 }
             }
@@ -96,13 +97,13 @@ class NotesTableViewController: UITableViewController {
     
     @IBAction func deleteButtonPressed(_ sender: UIButton) {
         print(sender.tag)
-        
-        
+        let noteToDelete = notes[sender.tag]
+        let noteReference = self.rootref.child("Notes").child(self.key!).child(noteToDelete.key)
+        noteReference.removeValue()
+        notes.remove(at: sender.tag)
+        self.fetchNotesfor(key: self.key!)
     }
 }
-
-
-
 
 
 class Note: NSObject {

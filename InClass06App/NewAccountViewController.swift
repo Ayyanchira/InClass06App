@@ -48,7 +48,14 @@ class NewAccountViewController: UIViewController {
                     else{
                         print("user created with username \(user.debugDescription)")
                         //store uuid in userdefaults
-                        UserDefaults.standard.set("loggedIn", forKey: "uuid")
+                        UserDefaults.standard.set(user?.uid, forKey: "uuid")
+                        let rootreference = Database.database().reference()
+                        let userReference = rootreference.child("Users")
+                        let user = [
+                            "name":username,
+                            "email":email
+                        ]
+                        userReference.setValue(user)
                         self.dismiss(animated: true, completion: nil)
                         
                     }
