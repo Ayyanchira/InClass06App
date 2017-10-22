@@ -18,7 +18,8 @@ class LoginViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if UserDefaults.standard.string(forKey: "uuid") != nil{
+        
+        if Auth.auth().currentUser != nil{
             performSegue(withIdentifier: "notebooksview", sender: nil)
         }
     }
